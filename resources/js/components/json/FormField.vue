@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="elementSize">
     <r64-default-field
       v-if="!field.flatten"
       :field="field"
@@ -69,6 +69,12 @@ export default {
         }
       )
     })
+  },
+
+  computed: {
+    elementSize() {
+      return this.field.size || 'w-full'
+    },
   },
 
   methods: {

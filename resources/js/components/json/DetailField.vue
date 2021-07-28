@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="elementSize">
     <r64-panel-item
       v-if="! field.flatten"
       :field="field"
@@ -56,7 +56,10 @@ export default {
       })
 
       return panels
-    }
+    },
+    elementSize() {
+      return this.field.size || 'w-full'
+    },
   }
 };
 </script>
